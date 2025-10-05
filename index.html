@@ -3,116 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>ERP Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
 </head>
-<body >
-    <main>
-        <header class = "head">
-           <div class="home">
-            <a href = "#">
-                <div class="sidebar-header">
-                    <img src = "simple-sidebar-menu-html-css-only-images/images/logo.png" alt="logo">
-                    <h2>
-                        ERP
-                    </h2>
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid justify-content-between">
+            <!--left side elements-->
+            <div class="d-flex">
+                <!--Logo-->
+                <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
+                    <img src="simple-sidebar-menu-html-css-only-images/images/logo.png" alt="ERP logo" height="40" loading="lazy" style="margin-top: 2px;">
+                    ERP
+                </a>
+            </div>
+
+            <!--center element-->
+            <ul class="navbar-nav flex-row d-none d-md-flex">
+                <form class="input-group w-auto my-auto d-none d-md-flex">
+                    <input autocomplete="off" type="search" class="form-control rounded" placeholder="search..." style="min-width: 125px; width: 300px;">
+                </form>
+            </ul>
+
+            <!--right element-->
+            <ul class="navbar-nav flex-row">
+                <li class="nav-item dropdown me-3 me-lg-1">
+                    <a data-mbd-dropdown-init class="nav-link hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" aria-expanded="false">
+                        <img src ="pictures/circle_notifications_64dp_000000_FILL0_wght400_GRAD0_opsz48.svg" alt="notification bell" height="30" loading="lazy" style="margin-top: 2px;">
+                        <span class="position-absolute top-2 start-5 translate-middle badge rounded-pill bg-danger">10</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                        <li>
+                            <a class="dropdown-item" href="#">notification 1</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">notification 2</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">notification 3</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+
+            <!--sidebar-->
+            <div id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white" style="width: 240px; box-shadow: 0 2px 5px 0 rgb(0 0 0 / 0.2),0 2px 10px 0 rgb(0 0 0 / 0.2); padding-top: 10px; top: 0;">
+                <div class="position-sticky">
+                    <div class="list-group list-group-flush mx-3 mt-4">
+                        <a href="#" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
+                            <span>Dashboard</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+                            <span>Logistics</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+                            <span>Marketing & Sales</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+                            <span>Inventory</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+                            <span>Manufacturing</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+                            <span>Settings</span>
+                        </a>
+                    </div>
                 </div>
-            </a>
-           </div>
-           <div class="search">
-            <form action ="" class = "search-bar">
-                <input type = "text" placeholder = "search" name = "q">
-                <button type ="submit">
-                    <img src = "search_bar_img/images/search.png">
-                </button>
-            </form>
-           </div>
-           <div class="notification">
-            <button onclick = "myFunction()" class = "dropbtn">
-                <span class="material-symbols-outlined">
-                    circle_notifications
-                </span>
-            </button>
-            <div id = "myDropdown" class="dropdown-content">
-                <a href = "#"> You made money</a>
-                <a href = "#"> You lost money</a>
-                <a href = "#"> You lost money again</a>
+        
             </div>
-           </div>
-           <div class="user-account">
-            <div class="user-profile">
-                <img src="simple-sidebar-menu-html-css-only-images/images/profile-img.jpg" alt="profile photo">
+
+            <!--Stat cards-->
+            <div class="col" style="margin-top: 1.5vh;">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Total Revenue</h5>
+                        <span>R0
+                            <img src="pictures/circle_notifications_64dp_000000_FILL0_wght400_GRAD0_opsz48.svg" alt="currency" height="50" loading="lazy" style="margin-left: 65%;">
+                        </span>
+                        <p>0% from last month</p>
+                    </div>
+                </div>
             </div>
-            <div class="user-info">
-                <h3> Test Name</h3>
+            <div class="col" style="margin-top: 1.5vh;">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Products Sold</h5>
+                        <span>0
+                            <img src="pictures/circle_notifications_64dp_000000_FILL0_wght400_GRAD0_opsz48.svg" alt="currency" height="50" loading="lazy" style="margin-left: 70%;">
+                        </span>
+                        <p>0% from last month</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="margin-top: 1.5vh;">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Manufacturing Jobs</h5>
+                        <span>0
+                            <img src="pictures/circle_notifications_64dp_000000_FILL0_wght400_GRAD0_opsz48.svg" alt="currency" height="50" loading="lazy" style="margin-left: 70%;">
+                        </span>
+                        <p>0% from last month</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="margin-top: 1.5vh;">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <h5>Active Orders</h5>
+                                <p>0</p>
+                                <p>-% from last month</p>
+                            </div>
+                            <div class="col-sm-3 text-right">
+                                <img src="pictures/circle_notifications_64dp_000000_FILL0_wght400_GRAD0_opsz48.svg" alt="orders" width="40">
+                            </div>
+                        </div>
+                </div>
             </div>
         </div>
-        </header>
+        <div class="row justify-content-end" style="margin-top: -15vh;">
+            <div class="col-6"> <!--graph-->
+                <h4 style = "margin-bottom: 10%; margin-left:-30%;"> Sales vs Production Overview </h4>
+            </div>
+            <div class="col-2"><!--quick action buttons-->
+                <h4 style = " margin-bottom: 10%; margin-left: -30%;"> Quick Actions </h4>
+                <div class="vstack gap-3"></div>
+                    <div class="hstack gap-3" style="margin-right: 10px; margin-left: -30%;" >
+                        <button class = "btn btn-outline-secondary" style ="width: 20vw; height: 15vh;">
+                            <img src="pictures/add_notes_64dp_000000_FILL0_wght400_GRAD0_opsz48.svg" alt="invoice-add" height="30">
+                            <br>
+                            <span> Create Invoice </span>
+                        </button>
+                        <button class = "btn btn-outline-secondary" style =" width: 20vw; height: 15vh;">
+                            <img src="pictures/box_add_64dp_000000_FILL0_wght400_GRAD0_opsz48.svg" alt="invoice-add" height="30">
+                            <br>
+                            <span> Add Stock </span>
+                        </button>
+                    </div>
+                    <div class="hstack gap-3" style="margin-right: 10px; margin-top: 10px; margin-left: -30%;">
+                        <button class = "btn btn-outline-secondary" style="width: 20vw; height: 15vh;">
+                            <img src="pictures/person_add_64dp_000000_FILL0_wght400_GRAD0_opsz48.svg" alt="invoice-add" height="30">
+                            <br>
+                            <span> Add Customer </span>
+                        </button>
+                        <button class = "btn btn-outline-secondary" style ="width: 20vw; height: 15vh;">
+                            <img src="pictures/add_chart_64dp_000000_FILL0_wght400_GRAD0_opsz48.svg" alt="invoice-add" height="30">
+                            <br>
+                            <span> Generate Report </span>
+                        </button>
+                    </div>
+
+                </span> 
+            </div>
+        </div>
+        <div class="row " style="margin-left: 20%;">
+            test
+        </div>
         
-    </main>
-    <aside class="sidebar">
-        <ul class="sidebar-links">
-            <li>
-                <a href = "#">
-                    <span class="material-symbols-outlined">
-                        dashboard
-                    </span>
-                    Dashboard
-                </a>
-            </li>
-            <li>
-                <a href = "pages/warehouse.html">
-                    <span class="material-symbols-outlined">
-                        local_shipping
-                    </span>
-                    Logistics
-                </a>
-            </li>
-            <li>
-                <a href = "pages/orders.html">
-                    <span class="material-symbols-outlined">
-                        shopping_basket
-                    </span>
-                    Marketing & Sales
-                </a>
-            </li>
-            <li>
-                <a href = "#">
-                    <span class="material-symbols-outlined">
-                        shelves
-                    </span>
-                    Inventory
-                </a>
-            </li>
-            <li>
-                <a href = "pages/manufacturing.html">
-                    <span class="material-symbols-outlined">
-                        factory
-                    </span>
-                    Manufacturing
-                </a>
-            </li>
-            <li>
-                <a href = "pages/settings.html">
-                    <span class="material-symbols-outlined">
-                        settings
-                    </span>
-                    Settings
-                </a>
-            </li>
-            <li>
-                <a href ="pages/Login.html" class="logout">
-                    <span class="material-symbols-outlined">
-                        logout
-                    </span>Logout
-                </a>
-            </li>
-        </ul>
-    </aside>
-   
-
-
-    <script src="test.js"></script>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
